@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    background-color: #dbdddf; /* Light background for the body */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #333, #444); /* Gradient background */
+    transition: background 0.3s, box-shadow 0.3s, height 0.3s; /* Transition for height */
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow effect when scrolled */
+    height: 70px; /* Increase height when scrolled */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+    opacity: 0; /* Start with hidden opacity */
+    transform: translateY(-10px); /* Start with a slight upward shift */
+    transition: opacity 0.4s, transform 0.4s; /* Animate opacity and transform */
+}
+
+.navbar li.visible {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Reset the transform */
+}
+
+.navbar a {
+    color: rgb(141, 24, 24); /* Text color */
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added glow effect */
+}
+
+.navbar a:hover {
+    color: #ac4a4a; /* Text color on hover */
+    transform: scale(1.1); /* Scale effect on hover */
+    box-shadow: 0 0 10px rgba(224, 96, 96, 0.8); /* Glowing effect on hover */
+}
+
+.content {
+    padding-top: 60px; /* Space for fixed navbar */
+}
+
+section {
+    padding: 50px;
+    height: 600px; /* Just for demo purposes */
+    background-color: #ffffff; /* White background for sections */
+    border-bottom: 1px solid #bc2929; /* Bottom border color */
+    opacity: 0; /* Start with hidden opacity */
+    transform: translateY(20px); /* Start with a slight upward shift */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animate opacity and transform */
+}
+
+section.visible {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Reset the transform */
+}
